@@ -34,9 +34,9 @@ def gpt_summary_parser(summary):
 def main(train_test):
 
     if train_test == 'training':
-        df = pd.read_csv('dataset/training_data.csv')
+        df = pd.read_csv('./dataset/training_data.csv')
     elif train_test == 'test':
-        df = pd.read_csv('dataset/test_data.csv')
+        df = pd.read_csv('./dataset/test_data.csv')
     else:
         return print('Enter valid argument')
     
@@ -62,7 +62,7 @@ def main(train_test):
             subans = mapping.get(q_text)
             df.at[idx, 'answer'] = subans
 
-    df.to_csv(f'dataset/{train_test}_data_processed.csv')
+    df.to_csv(f'./dataset/{train_test}_data_processed.csv')
 
 
     
